@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+<!-- Navbar -->
+{% include "partials/_navbar.html" %}
+
+
+
+<div class="container mt-5">
+    <div class="iletisim-form row">
+        <div class="iletisim-form-left col-lg-6">
+            <img class="iletisim-photo w-100" src="{% static 'img/iletisim.png' %}" alt="iletisim-photo">
+        </div>
+        <div class="iletisim-form-right col-lg-6">
+            <h3 style="font-family: inherit;" class="iletisim-title mt-3">İletişim Formu</h3>
+            <form action="/iletisim/" method="POST">
+                {% csrf_token %}
+                <div class="ad-soyad d-flex">
+                    <input type="text" name="ad" class="iletisim-form-input form-control mx-1" placeholder="Adınız">
+                    <input type="text" name="soyad" class="iletisim-form-input form-control mx-1" placeholder="Soyadınız">
+                </div>
+                <input type="email" name="email" class="iletisim-form-input form-control my-3" placeholder="Email">
+                <input type="text" name="telefon" class="iletisim-form-input form-control my-3" placeholder="Telefon">
+                <textarea name="mesaj"  class="iletisim-form-input form-control my-3 form-mesaj" placeholder="Mesajınız"></textarea>
+            
+            <button id="kayit-btn" data-mdb-ripple-init type="submit" class="btn btn-primary me-3 w-100">Mesajı Gönder</button>
+            </form>
+    </div>
+
+    <div class="iletisim-bilgilerimiz mt-5">
+        <h3 style="font-family: inherit; color: black;" class="iletisim-title mt-3">İletişim Bilgilerimiz</h3>
+    </div>
+    
+    <div class="iletisim-bilgilerimiz-right col-lg-6">
+        <p>Telefon : +90 553 373 09 01</p>
+        <div class="iletisim-adres d-flex">
+            <p>Adres </p> <!-- Bu yazılara daha sonra font-weight bold eklenecek  -->
+            <a target="_blank" href="https://maps.app.goo.gl/q9M7NwYrXbQxWgPA6"> : Duykan Steel Base, Egemenlik, No:16, 6145. Sk., 35070 Bornova/İzmir</a>
+        </div>
+        <p>Email : duykantaban@hotmail.com</p>
+    </div>
+
+    <div class="iletisim-bilgilerimiz-left col-lg-6">
+        <iframe class="iletisim-map" width="100%"  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12502.85664831418!2d27.219584!3d38.4249701!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b9633b9beb8379%3A0xd3c4df7d8fb263d5!2sDuykan%20Steel%20Base!5e0!3m2!1str!2str!4v1707595822321!5m2!1str!2str" ></iframe>
+    </div>
+</div>
+</div>
+
+
+<!-- Footer -->
+<div class="footer-part mt-5">
+    {% include 'partials/_footer.html' %}
+</div>
+{% endblock body %}
+    

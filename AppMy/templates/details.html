@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block body %}
+<!-- Navbar -->
+{% include 'partials/_navbar.html' %}
+
+
+<!-- <div class="container mt-5">
+    <h1>{{ urun.adi }}</h1>
+    <h3>{{ urun.fiyat }}</h3>
+    <p>{{ urun.aciklama }}</p>
+    <img src="{{ urun.urun_resmi.url }}" alt="resim">
+</div> -->
+
+<div class="container mt-5">
+    <img class="mx-auto d-block" style="width: 50%; max-height: 700px;" src="{{ urun.urun_resmi.url }}" alt="resim">
+    <h1 class="text-center mt-4">ÜRÜN ADI : {{ urun.adi }}</h1>
+    
+    {% if urun.fiyat != 0 %}        
+    <h3 class="text-center">ÜRÜN FİYATI : {{ urun.fiyat }} TL</h3>
+    {% endif %}
+    <p class="text-center">ÜRÜN AÇIKLAMASI : {{ urun.aciklama }}</p>
+    <p class="text-center">Daha fazlası için <a href="/iletisim">iletişime geçin.</a></p>
+</div>
+
+
+<!-- ? Comments -->
+<div class="comments container mt-5">
+    <h3>Yorum Ekle</h3>
+    <form  method="POST">
+        {% csrf_token %}
+        <input type="text" name="ad_soyad" class="form-control" placeholder="Ad Soyad">
+        <textarea name="yorum"  class="form-control mt-3" placeholder="Yorumunuz"></textarea>
+        <button type="submit" class="btn btn-primary mt-3 w-100">Yorumu Gönder</button>
+    </form>
+
+    <h3 class="mt-5">Yorumlar</h3>
+    
+    {% for i in yorumlar %}
+        <div class="mt-5 card text-center">
+            <div class="card-header">{{ i.ad_soyad }}</div>
+            <div class="card-body">
+            <p class="card-text">{{ i.yorum }}</p>
+            </div>
+            <div class="card-footer text-muted">{{ i.tarih }}</div>
+        </div>
+    {% endfor %}
+        
+    
+</div>
+
+{% endblock body %}

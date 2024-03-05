@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+
+{% include 'partials/_navbar.html' %}
+
+<h1 style=" width: 50%; margin: auto;" class="text-center mt-3">Yönetici Paneline Erişmek İçin Giriş Yapın</h1>
+
+<section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div  class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div style="border: 1px solid black;" class="card bg-light" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+  
+              <div class="mb-md-5 mt-md-4 pb-5">
+                <form method="POST">
+                  {% csrf_token %}
+                  <h2 style="font-family: inherit;" class="fw-bold mb-2 text-uppercase">KAYIT OL</h2>
+                  <p class="text-muted mb-5">Yönetici ve Çalışan Kayıt Formu</p>
+                  <input type="text" name="ad" class="form-control form-control-lg mb-3" placeholder="Ad">
+                  <input type="text" name="soyad" class="form-control form-control-lg mb-3" placeholder="Soyad">
+                  <input type="text" name="username" id="username" class="form-control form-control-lg mb-3" placeholder="Kullanıcı Adı">
+                  <input type="email" name="email" id="email" class="form-control form-control-lg mb-3" placeholder="Email">
+                  <input type="password" name="password" id="password" class="form-control form-control-lg mb-3" placeholder="Şifre">
+                  <input type="text" name="kayit-kod" id="kayit-kod" class="form-control form-control-lg mb-3" placeholder="Kayıt Kodu">
+    
+                  <p class="small pb-lg-2"><a href="#!">Şifremi Unuttum</a></p>
+    
+                  <button class="btn btn-primary btn-lg px-5 w-100" type="submit">KAYIT OL</button>
+  
+                </form>
+  
+              </div>
+  
+              <div>
+                <a href="/giris" class="text-muted fw-bold">Giriş Yap</a>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!-- Footer -->
+
+{% include 'partials/_footer.html' %}
+{% endblock body %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+<!-- Navbar -->
+{% include 'partials/_navbar.html' %}
+
+<div class="container d-flex justify-content-center mt-5">
+    <div class="row">
+        {% for i in iletisim %}
+            <div class="card mx-5 col-lg-3 col-md-6 my-5" style="width: 18rem; border: 1px solid black;">
+            <div class="card-header px-3">{{ i.ad }} {{ i.soyad }}</div>
+            <ul class="list-group list-group-light list-group-small">
+            <li class="list-group-item px-3"><h6>{{ i.email }}</h6></li>
+            <li class="list-group-item px-3"><h5>{{ i.telefon }}</h5></li>
+            <li class="list-group-item px-3"><p>{{ i.mesaj | safe | linebreaks }}</p></li>  
+            </ul>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+<div class="mt-5" >
+    {% include 'partials/_footer.html' %}
+</div>
+
+{% endblock body %}

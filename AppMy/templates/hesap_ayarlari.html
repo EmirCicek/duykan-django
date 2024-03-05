@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+{% include 'partials/_navbar.html' %}
+
+<h1>Hesap Ayarları</h1>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hesap Ayarları</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="container">
+        <p>
+            <label for="ad">Ad:</label>
+            <input  type="text" name="ad" id="ad" value="{{ user.first_name }}">
+        </p>
+        <p>
+            <label for="soyad">Soyad:</label>
+            <input  type="text" name="soyad" id="soyad" value="{{ user.last_name }}">
+        </p>
+        <p>
+            <label for="username">Kullanıcı Adı:</label>
+            <input  type="text" name="username" id="username" value="{{ user.username }}">
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input  type="email" name="email" id="email" value="{{ user.email }}">
+        </p>
+        <p>
+            <label for="password">Yeni Şifre (değiştirmek istemiyorsanız boş bırakın):</label>
+            <input  type="password" name="password" id="password">
+        </p>
+        <button class="btn btn-primary w-50" type="submit">Kaydet</button>
+    </div>
+    </form>
+</body>
+</html>
+
+
+{% endblock body %}

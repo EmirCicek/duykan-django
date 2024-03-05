@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+<title>AnaSayfa</title>
+{% endblock head %}
+
+
+{% block body %}
+<!-- Navbar -->
+{% include "partials/_navbar.html" %}
+<!-- Navbar -->
+
+<!--? Carousel  -->
+  <div id="carouselExampleControls"  class="carousel slide w-100" data-mdb-ride="carousel" data-mdb-carousel-init>
+    <div class="carousel-inner" >
+      <div class="carousel-item active">
+        <img style="width: 100%; height: 600px; object-fit: inherit;" src="{% static 'img/duykan-foto.jpg' %}" class="d-block " alt="Camera"/>
+      </div>
+      <div class="carousel-item">
+        <img style="width: 100%; height: 600px; object-fit: inherit;" src="{% static 'img/duykan-foto-2.jpg' %}" class="d-block " alt="Exotic Fruits"/>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+<!--? Carousel  -->
+
+<!-- ? Company Information -->
+<div class="container mt-5">
+  <h1 style="text-align: center; color: #0B5ED7;" >DUYKAN TABAN</h1>
+  <div style="border: 1px solid #0B5ED7; margin: auto; background-color: #4979c2; width: 205px; height: 1px;" class="box mb-5"></div>
+  <p style="text-align: center; font-family: Arial, Helvetica, sans-serif; " >Duykan Taban, ayakkabı sektöründeki 12 yıllık tecrübesiyle; ayakkabı çelikli taban astarı, jurdan ve ökçe üretimi faaliyetlerini başarıyla sürdürmektedir.</p>
+</div>
+<!-- ? Company Information -->
+
+<!-- ? Product Information -->
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-6 product-image"><img style="border: 2px solid rgba(0, 0, 0, 0.055); box-shadow: -10px 10px 8px #9e9e9e; width: 90%; height: 95%;"  src="{% static "img/logo-3.jpg" %}" alt="logo-3"></div>
+    <div class="col-lg-6">
+      <h2 style="color: #0B5ED7;">12 Yıllık Tecrübe</h2>
+      <p style="font-family: Arial, Helvetica, sans-serif;">Şirketimiz, ürün geliştirme, tasarım ve üretimde üstün performans göstererek ve satış sonrası hizmette müşteri memnuniyetini ön planda tutarak büyümeye devam ediyor.</p>
+      <div class="vizyon">
+        <h3 style="font-family:inherit;">Vizyonumuz</h3>
+        <p>Ayakkabı sektöründe faaliyet gösteren, değer yaratan ve yatırım yapan firmalara, hızlı, kaliteli ve müşteri memnuniyetini her zaman ön planda tutan bir bakış açısıyla ürün ve hizmet sunmak temel hedefimizdir.</p>
+      </div>
+      <div class="misyon">
+        <h3 style="font-family:inherit;">Misyonumuz</h3>
+        <p>2012 yılında ayakkabı taban imalat sektöründe faaliyete giren ve bu alanda çeşitli ürünlerle hizmetler sunmaya başlayan Duykan Taban Sanayi ve Ticaret Limited Şirketi, geçen süre zarfında binlerce parçalık ürün ve ayakkabı taban imalatına imza atmıştır. Kurumsal ürün ve hizmet ihtiyacı içinde olan ayakkabı taban imalatında  önde gelen şirket ve çözüm ortağı haline gelmiştir. Misyonumuz; kurucu değerlerimizle ilk günkü kalitemizde bizi tercih eden müşterilerimize en kaliteli hizmetli sunmaktır.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ? Product Information -->
+
+<!-- ? İletişim Yönlendirme -->
+
+<div class="hero-container">
+  <img class="hero-image" src="{% static 'img/hero-image.jpg' %}" alt="Hero Image">
+  <div class="hero-content">
+    <h2>Size En İyi Hizmeti Sunmak İçin Hazırız</h2>
+    <a class="btn btn-outline-light" href="iletisim">İLETİŞİM</a> 
+  </div>
+</div>
+
+
+<!-- ? İletişim Yönlendirme -->
+
+<!-- ? Footer -->
+
+{% include 'partials/_footer.html' %}
+
+{% endblock body %}
+
+
+
+{% block javascript %}
+  <script>
+    // Initialization for ES Users
+    import { Collapse, Ripple, initMDB } from "mdb-ui-kit";
+
+    initMDB({ Collapse, Ripple });
+    // Initialization for ES Users
+    import { Carousel, initMDB } from "mdb-ui-kit";
+
+    initMDB({ Carousel });
+  </script>
+{% endblock javascript %}
+
+

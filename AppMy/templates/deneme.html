@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+{% include 'partials/_navbar.html' %}
+
+
+{% for i in urunler %}
+
+<h1>Ürün Başlığı : {{ i.adi }} </h1>
+<h3>Ürün Fiyatı : {{ i.fiyat }}</h3>
+<p>{{ i.aciklama }}</p>
+<img src="{{ i.urun_resmi.url }}" alt="resim">
+<h1>{{ i.urun_resmi.url }}</h1>
+{% endfor %}
+    
+
+
+
+{% endblock body %}

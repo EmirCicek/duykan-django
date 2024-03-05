@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+{% include "partials/_navbar.html" %}  
+
+<div class="hero-container">
+    <img class="hero-image" src="{% static 'img/hero-image.jpg' %}" alt="Hero Image">
+    <div class="hero-content">
+      <h2>Size En İyi Hizmeti Sunmak İçin Hazırız</h2>
+      <a class="btn btn-outline-light" href="/iletisim">İLETİŞİM</a>
+    </div>
+  </div>
+
+<div class="hakkimizda container">
+    <h1 class="title_css" >Hakkımızda</h1>
+    <p>Duykan Taban, ayakkabı sektöründeki 12 yıllık tecrübesiyle; ayakkabı çelikli taban astarı, jurdan ve ökçe üretimi faaliyetlerini başarıyla sürdürmektedir.</p>
+    <h2 class="title_css" >Vizyonumuz</h2>
+    <p>Ayakkabı sektöründe faaliyet gösteren, değer yaratan ve yatırım yapan firmalara, hızlı, kaliteli ve müşteri memnuniyetini her zaman ön planda tutan bir bakış açısıyla ürün ve hizmet sunmak temel hedefimizdir.</p>
+    <h2 class="title_css" >Misyonumuz</h2>
+    <p>2012 yılında ayakkabı taban imalat sektöründe faaliyete giren ve bu alanda çeşitli ürünlerle hizmetler sunmaya başlayan Duykan Taban Sanayi ve Ticaret Limited Şirketi, geçen süre zarfında binlerce parçalık ürün ve ayakkabı taban imalatına imza atmıştır. Kurumsal ürün ve hizmet ihtiyacı içinde olan ayakkabı taban imalatında önde gelen şirket ve çözüm ortağı haline gelmiştir. Misyonumuz; kurucu değerlerimizle ilk günkü kalitemizde bizi tercih eden müşterilerimize en kaliteli hizmetli sunmaktır.</p>
+</div>
+
+{% include "partials/_footer.html" %}
+
+{% endblock body %}

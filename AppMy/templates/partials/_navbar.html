@@ -1,0 +1,65 @@
+<!-- Navbar -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+    <!-- Container wrapper -->
+    <div class="container">
+      <!-- Navbar brand -->
+      <a class="navbar-brand me-2" href="/">
+        <img
+          src="{% static "img/logo.png" %}"
+          height="36"
+          alt="Logo"
+          loading="lazy"
+          style="margin-top: -10px;"
+
+        />
+      </a>
+  
+      <!-- Toggle button -->
+      <button
+        data-mdb-collapse-init
+        class="navbar-toggler"
+        type="button"
+        data-mdb-target="#navbarButtonsExample"
+        aria-controls="navbarButtonsExample"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarButtonsExample">
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Anasayfa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/hakkimizda">Hakkımızda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/urunler">Ürünlerimiz</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/iletisim">İletişim</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/yonetici">Yönetici Paneli</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+  
+        <div class="d-flex align-items-center kullanici_bolum ">
+          <a href="/giris"><button data-mdb-ripple-init type="button" style="font-family: inherit;" class="login-btn btn btn-link px-3 me-2 kullanici_btn" >
+            YÖNETİCİ GİRİŞİ
+          </button></a>
+          
+        </div>
+      </div>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->

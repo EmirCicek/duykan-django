@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<!-- Navbar -->
+{% include 'partials/_navbar.html' %}
+
+<div class="container">
+    <form method="POST" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <div class="container mt-5 " style="border: 1px solid black; max-width: 700px; padding: 20px; background-color: whitesmoke; border-radius: 20px;height: auto; ">
+            <input class="form-control mt-3" name="ad" type="text" placeholder="Ürün Adı">
+            <input type="number" class="form-control mt-3" name="fiyat" placeholder="Ürün Fiyatı">
+            <input type="file" class="form-control mt-3" name="urun_resmi">
+            <textarea class="form-control mt-3" name="urun_aciklama"  cols="30" rows="10" placeholder="Ürün Açıklaması"></textarea><br>
+            <select class="form-select" name="kategoriler" id="">
+                <option value="">Kategori Seçin</option>
+                <option value="celikli-taban">Çelikli Taban</option>
+                <option value="jurdan">Jürdan</option>
+                <option value="okce">Ökçe</option>
+                <option value="vardola">Vardola</option>
+            </select>
+            <button type="submit" class="btn btn-primary w-100 mt-3">Ürünü Ekle</button>
+        </div>
+    </form>
+</div>
+
+
+<div class="mt-5" >
+    {% include 'partials/_footer.html' %}
+</div>
+{% endblock body %}

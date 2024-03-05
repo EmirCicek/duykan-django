@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block body %}
+<!-- Navbar -->
+{% include "partials/_navbar.html" %}
+
+
+
+<!-- ? Product Cards -->
+<div class="container mt-5 urunler">
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        
+        {% for i in urunler %}
+        <div class="col-lg-4">
+          <div class="card urunler_card">
+              <!-- Resim ortalam backendden ürün eklenirken seçilecek boolenfield resim ortalansın mı? ==> True ise object-fit: cover; -->
+              <!-- ürünün width height backendden ürün eklenirken seçilecek -->
+            <img width="400px" height="400px"  src="{{ i.urun_resmi.url }}" class="card-img-top h-"  alt="urun {{ i.id }}"/>
+            <div class="card-body">
+              <h5 class="card-title">{{ i.adi }}</h5>
+              <p class="card-text">
+                {{ i.aciklama }}
+              </p>
+            </div>
+            <a href=" /detay/{{ i.slug }}"><button type="button" class="btn w-100 btn-outline-primary "  data-mdb-ripple-init data-mdb-ripple-color="dark">Ürüne Git</button></a>
+            
+          </div>
+        </div>
+        {% endfor %}
+          
+          
+
+        
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% include "partials/_footer.html" %}
+{% endblock body %}
