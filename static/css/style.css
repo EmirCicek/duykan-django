@@ -1,0 +1,156 @@
+/* reseting */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Navbar Start */
+.login-btn{
+    border: 1px solid #0B5ED7;
+}
+
+/* Navbar End */
+
+/* index page start */
+.hero-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* index page end */
+
+/* hakkimizda page start */
+
+.hakkimizda {
+    padding: 20px ;
+    margin-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 50px;
+}
+
+
+.title_css{
+    color: #0B5ED7;
+}
+
+/* hakkimizda page end */
+
+/* urunler page start */
+
+.urunler_card image{
+    height: 50%;
+}
+
+
+/* urunler page end */
+
+/* iletisim page start */
+
+.iletisim-photo{
+    height: 430px;
+    object-fit: fill;
+}
+
+
+.form-mesaj{
+    height: 160px;
+}
+
+
+
+/* responsive start */
+
+
+
+
+
+
+@media screen and (max-width: 790px) {
+
+    .product-image {
+        text-align: center;
+    }
+
+    .hero-content h2{
+        font-size: 2em;
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .hero-image{
+        height: 200px;
+    }
+    .hero-content h2{
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+    .hero-image{
+        height: 150px;
+        object-fit: cover;
+    }
+    
+}
+
+@media screen and (max-width:450px) {
+    .iletisim-photo{
+        height: 320px;
+        object-fit: fill;
+    }
+    .iletisim-form-right h3,.iletisim-bilgilerimiz h3{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width:430) {
+    .hero-content h2{
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .filter-buttons{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 441px) {
+    .filter-buttons button{
+        width: 75%;
+        margin-bottom: 10px;
+    }
+    
+}
+
+/* responsive end */
